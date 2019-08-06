@@ -13,7 +13,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 
 startTiming = True
-second = 1
+second = 3
 step = 0
 
 def getChordPixSum(): 
@@ -213,6 +213,9 @@ class RandomChordWindow(QWidget):
     def handle_click(self):
         if not self.isVisible():
             self.show()
+            global startTiming
+            startTiming = True
+            self.startDisplayLine.setText('开始播放')
             global step 
             step += 1
             self.PixShow()
